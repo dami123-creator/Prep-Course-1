@@ -44,7 +44,7 @@ function suma(x, y) {
 function resta(x, y) {
   // Resta "y" de "x" y devuelve el valor
   // Tu código:
-  var resta=y-x;
+  var resta=x-y;
   return resta 
   
 }
@@ -78,7 +78,7 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (str1.length == str.length){
+  if (str1.length == str2.length){
     return true
   }
   return false
@@ -88,7 +88,7 @@ function menosQueNoventa(num) {
   // Devuelve "true" si el argumento de la función "num" es menor que noventa
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(num>90){
+  if(num<90){
     return true
   }
   return false 
@@ -109,6 +109,7 @@ function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
   var resto = x % y;
+  return resto
 }
 
 function esPar(num) {
@@ -169,7 +170,7 @@ function redondearHaciaArriba(num) {
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  return Math.random
+  return Math.random()
 }
 
 function esPositivo(numero) {
@@ -177,10 +178,10 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if(num>0){
+  if(numero>0){
     return "Es positivo"
-  }else if (num<0){
-    return "Es Negativo"
+  }else if (numero<0){
+    return "Es negativo"
   }else { 
     return false
   }
@@ -212,8 +213,7 @@ function obtenerSaludo(nombre) {
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
-  var aux = 180-(alto+ancho)
-  var area = aux+(alto+ancho)
+  var area = alto*ancho
   return area 
 }
 
@@ -221,8 +221,8 @@ function obtenerAreaRectangulo(alto, ancho) {
 function retornarPerimetro(lado){
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
-  var perimetro = Math.pow(lado,2)
-  return perimetro 
+  var perimetro = 4*lado;
+  return perimetro
 }
 
 
@@ -249,11 +249,11 @@ function esVocal(letra){
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
-  if(letra!="a" && letra!="e" && letra!="i" && letra!="o" && letra!="u" && letra.length>1){
-    return "Dato incorrecto"
-  }else {
+  if(letra=="a" || letra=="e" || letra=="i" || letra=="o" || letra=="u" && letra.length<2){
     return "Es vocal"
+    
   }
+    return "Dato incorrecto"
 }
 
 
