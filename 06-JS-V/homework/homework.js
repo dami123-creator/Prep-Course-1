@@ -35,14 +35,22 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
-  String.prototype.reverse = function(){
-    var stringInvertida = ""
-    for (let i = this.length -1; i >= 0; i--) {
-      stringInvertida = stringInvertida + this.charAt(i);
-    }
-    return stringInvertida;
+  // String.prototype.reverse = function(){
+  //   var stringInvertida = ""
+  //   for (let i = this.length -1; i >= 0; i--) {
+  //     stringInvertida = stringInvertida + this.charAt(i);
+  //   }
+  //   return stringInvertida;
+  // }
+
+  String.prototype.reverse= function () {
+    var nuevaString = this.split("").reverse().join("")
+    return nuevaString;
   }
+  
+
 }
+
 
 // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
@@ -59,26 +67,26 @@ function agregarStringInvertida() {
   class Persona {
     constructor(nombre, apellido, edad, domicilio) {
       // Crea el constructor:
-      this.nombre = nombre,
-      this.apellido = apellido,
-      this.edad = edad,
-      this.domicilio = domicilio,
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.edad = edad;
+      this.domicilio = domicilio;
       this.detalle = function() {
         return {
           nombre: this.nombre,
-          apellido: this.apellidom,
+          apellido: this.apellido,
           edad: this.edad,
           domicilio: this.domicilio
         }
       }
     }
-}
+  }
 
 function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
-  const persona = new Persona("Juan", "Perez", 22, "Saavedra 123")
+  const persona = new Persona(nombre, apellido, edad, dir);
   return persona;
 
 }
